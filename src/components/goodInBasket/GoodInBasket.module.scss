@@ -1,0 +1,69 @@
+@import "./../../style/style.scss";
+
+.name_columns {
+  display: grid;
+  min-height: 40px;
+  grid-template-columns: 40% auto auto auto auto;
+}
+.item {
+  display: grid;
+  padding: 10px 20px;
+  grid-template-columns: 40% auto auto auto auto;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  background-color: $background-color;
+}
+.delete {
+  position: absolute;
+  top: 50%;
+  right: -20px;
+  transform: translateY(-50%);
+  transition: $transition;
+  font-size: 25px;
+  cursor: pointer;
+  &:hover {
+    color: $accent-color;
+  }
+}
+.block {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.img {
+  width: 60px;
+  height: 60px;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.counter {
+  display: flex;
+  align-items: center;
+}
+.btn {
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: $transition;
+  cursor: pointer;
+  span {
+    font-size: 24px;
+    color: black;
+    &:hover {
+      color: $accent-color;
+    }
+  }
+}
+.btn_finishBtn{
+  background-color: $accent-color;
+  padding: 14px 32px;
+}

@@ -1,0 +1,39 @@
+@import "./../../style/variables.scss";
+.item {
+  width: 400px;
+  min-height: 483px;
+  padding: 13px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: $transition;
+  &:hover {
+    box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.img {
+  display: block;
+  margin: 0 auto;
+  width: 238px;
+  height: 188px;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+.name {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+}
+.newGood {
+  width: 90px;
+  height: 35px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(0deg, #b22222 0%, #b22222 100%), #fff;
+}

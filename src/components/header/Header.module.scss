@@ -1,0 +1,39 @@
+@import "./../../style/_variables.scss";
+
+.header {
+  &_top {
+    min-height: 80px;
+    background-color: green;
+    display: flex;
+    align-items: center;
+    &_container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+  &_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+  &_bottom {
+    min-height: 88px;
+    background-color: $main-color;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &_container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}
+.list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}

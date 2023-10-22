@@ -1,0 +1,28 @@
+@import "./../../style/variables";
+
+.photos {
+  padding: 20px 0 30px;
+  background: url("./backgroundImg.png") center (center / cover) no-repeat;
+}
+.imageContainer {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+}
+.image {
+  position: relative;
+  height: 477px;
+  a {
+    background-color: $accent-color;
+    position: absolute;
+    padding: 17px;
+    bottom: 10px;
+    left: 23px;
+    border-radius: 5px;
+  }
+}
+.arrow {
+  left: 0 !important;
+  bottom: -10px !important;
+  border-radius: 0px 5px !important;
+}

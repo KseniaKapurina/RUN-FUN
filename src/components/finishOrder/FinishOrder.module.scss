@@ -1,0 +1,145 @@
+@import "./../../style/variables";
+
+.finishOrder {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  padding: 20px 0;
+}
+.table {
+  &_top,
+  &_bottom {
+    display: flex;
+  }
+  &_top {
+    margin-bottom: 20px;
+    text-align: center;
+    padding-bottom: 1px solid black;
+  }
+}
+.tableContainer {
+  max-height: 565px;
+  width: 550px;
+  overflow-y: auto;
+}
+.tableContainer::-webkit-scrollbar-track {
+  border: 1px solid $accent-color;
+
+  background-color: #fff;
+}
+.tableContainer::-webkit-scrollbar {
+  width: 10px;
+}
+
+.tableContainer::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: $accent-color;
+  border: 1px solid $accent-color;
+}
+.name {
+  width: 200px;
+}
+.colors,
+.totalPrice {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+}
+.image {
+  width: 200px;
+  height: 150px;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+hr {
+  margin: 10px 0;
+  width: 300px;
+}
+.result {
+  font-size: 16px;
+  p {
+    font-weight: 600;
+    font-size: 20px;
+  }
+}
+.title {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: white;
+}
+.forms {
+  width: 400px;
+  padding: 30px 20px;
+  border-radius: 10px;
+  background-color: $main-color;
+  min-height: 300px;
+  &_top {
+    display: flex;
+    justify-content: space-between;
+    a {
+      font-weight: 600;
+      font-size: 14px;
+      transition: $transition;
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+  &_tel {
+    margin-bottom: 40px;
+  }
+  input {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid black;
+    background-color: inherit;
+    outline: none;
+    padding: 10px 10px 5px 10px;
+    &::placeholder {
+      color: rgba(0, 0, 0, 0.6);
+    }
+  }
+  textarea {
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    // background-color: transparent;
+    outline: none;
+    &::placeholder {
+      color: rgba(0, 0, 0, 0.6);
+    }
+  }
+  button {
+    padding: 10px 30px;
+    background-color: $accent-color;
+    color: white;
+    border-radius: 5px;
+    transition: $transition;
+    cursor: pointer;
+    &:hover {
+      background-color: $btn-hover;
+    }
+  }
+}
+.text {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.goBack {
+  display: block;
+  padding: 10px 30px;
+  background-color: $accent-color;
+  color: white;
+  transition: $transition;
+  border-radius: 5px;
+  cursor: pointer;
+  &:hover {
+    background-color: $btn-hover;
+  }
+}

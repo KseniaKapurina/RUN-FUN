@@ -1,0 +1,133 @@
+{
+  "users": [
+    {
+      "email": "sonyasmirnova@gmail.com",
+      "password": "$2a$10$od95hlnM.U2ilcXoqB.DNuuNwO.J8cfCewQQq6QxkMAd2vP2pMdum",
+      "name": "Ksenia",
+      "tel": "+7 (567) 890-67-89",
+      "confirmPassword": "123456",
+      "orders": [
+        {
+          "goods": [],
+          "totalPrice": 37398,
+          "date": "2023-10-14T15:39:09.320Z"
+        }
+      ],
+      "id": 1
+    }
+  ],
+  "orders": [],
+  "goods": [
+    {
+      "id": 1,
+      "name": "Кроссовки UYN WOMAN FREE FLOW TUNE SHOES",
+      "description": "Дизайн будущего - носите сегодня. Обувь Free Flow изготовлена из двухслойной системы: шерсть внутри и технический перфорированный трикотаж снаружи. Благодаря такой конструкции обувь является естественным терморегулятором с высокой воздухопроницаемостью. ",
+      "adddescription": " CONFLEX YARN - Запатентованный метод производства открывает целый ряд новых возможностей. Обувь сделана из цельного куска, отдельные части, такие как пятка, носок и бока частично усилены. При этом, верхняя часть сохраняет свою исключительную эластичность. Благодаря этому обувь очень легко надевается, а также обеспечивается необходимая устойчивость. Стабильность и гибкость – идеальное сочетание.",
+      "price": 17820,
+      "newPrice": 16500,
+      "category": "sneakers",
+      "quantity": 7,
+      "image": [
+        "uyn_woman_free_flow_tune_shoes_main.jpg",
+        "uyn_woman_free_flow_tune_shoes_1.jpg",
+        "uyn_woman_free_flow_tune_shoes_2.jpg",
+        "uyn_woman_free_flow_tune_shoes_3.jpg"
+      ],
+      "brand": "UYN",
+      "status": "new",
+      "season": 2023,
+      "gender": "для женщин",
+      "age": "для взрослых",
+      "material": "текстиль",
+      "color": [
+        {
+          "name": "светло-серый",
+          "code": "silver"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Футболка с длинным рукавом Reebok COMP LS",
+      "description": "",
+      "adddescription": "Ничто не отвлечёт тебя от тренировки. Эта футболка с компрессионным эффектом поддержит мышцы во время тренировки. Плоские шви помогут избежать натирания, а ткань с технологией Speedwick отведёт влагу от тела.",
+      "price": 4298,
+      "category": "t-shirt",
+      "quantity": 9,
+      "image": [
+        "reebok_comp_ls_main.jpg",
+        "reebok_comp_ls_1.jpg",
+        "reebok_comp_ls_2.jpg",
+        "reebok_comp_ls_3.jpg"
+      ],
+      "brand": "Reebok",
+      "status": null,
+      "season": 2023,
+      "gender": "для мужчин",
+      "age": "для взрослых",
+      "material": "86% полиэстер, 14% эластан",
+      "color": [
+        {
+          "name": "сиреневый",
+          "code": " lilas"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Кроссовки Reebok ENERGEN TECH PLUS",
+      "description": "Передовые технологии бренда и привлекательная цена – возможно, лучшее сочетание для знакомства с бегом. Основой этой модели ENERGEN TECH PLUS стал пеноматериал FLOATIRDE FUEL с высокими амортизирующими свойствами; он гасит ударные нагрузки и способствует возврату вложенной при беге энергии. ",
+      "adddescription": "Универсальная подметка обеспечивает медиальная гибкость и превосходное сцепление с поверхностью. Стелька с технологиями ORTHOLITE и MEMORYTECH подарит защиту и комфорт: технология ORTHOLITE выполняет антимикробную функцию, а MEMORYTECH – гарантирует комфортную посадку за счет эффекта памяти. Материал верха, на 30% выполненный с использованием переработанных материалов, гарантирует превосходный воздухообмен и износостойкость. Плоские шнурки надежно фиксируют стопу.Модель рекомендуется для коротких дистанций до 10 км и прекрасно подойдет начинающим спортсменам.",
+      "price": 10998,
+      "newPrice": 10449,
+      "category": "sneakers",
+      "quantity": 7,
+      "image": [
+        "reebook_energen_tech_reebook_main.jpg",
+        "reebook_energen_tech_reebook_1.jpg",
+        "reebook_energen_tech_reebook_2.jpg",
+        "reebook_energen_tech_reebook_3.jpg"
+      ],
+      "brand": "UYN",
+      "status": null,
+      "season": 2023,
+      "gender": "для женщин",
+      "age": "для взрослых",
+      "material": "текстиль",
+      "color": [
+        {
+          "name": "лайм",
+          "code": " lime"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Кроссовки Puma EXPLORE NITRO WNS",
+      "description": "Представляем нашу первую обувь для походов - Explore NITRO.  ",
+      "adddescription": "Эти ботинки предназначены для всех трасс, от плоских и гравийных до крутых и скалистых, с сочетанием пены NITRO и PROFOAMLITE в средней подошве, вы получаете лучший комфорт на любой местности. Добавьте подошву PUMAGRIP ATR и уникальную форму воротника - в комплекте со встроенной системой шнуровки, фиксирующими пятку и у вас будет идеальный компаньон для прогулок. Будьте готовы к любой погоде и местности, независимо от сезона.",
+      "price": 12340,
+      "newPrice": 11899,
+      "category": "sneakers",
+      "quantity": 9,
+      "image": [
+        "puma_explore_nitro_wns_main.jpg",
+        "puma_explore_nitro_wns_1.jpg",
+        "puma_explore_nitro_wns_2.jpg",
+        "puma_explore_nitro_wns_3.jpg"
+      ],
+      "brand": "UYN",
+      "status": null,
+      "season": 2023,
+      "gender": "для женщин",
+      "age": "для взрослых",
+      "material": "текстиль",
+      "color": [
+        {
+          "name": "сиреневый",
+          "code": " lilas"
+        }
+      ]
+    }
+  ]
+}

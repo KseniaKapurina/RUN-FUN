@@ -1,0 +1,54 @@
+@import "./../../style/style.scss";
+
+.wrapperForms {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+.personalData {
+  width: 1082px;
+  min-height: 440px;
+  border-radius: 5px;
+  background: #dcdcdc;
+  padding: 40px 120px 56px;
+}
+.subtitle {
+  color: var(--Black, #000);
+  font-family: Prosto One;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  margin-bottom: 24px;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin-bottom: 24px;
+}
+.name {
+  font-size: 12px;
+  flex: $main-color;
+  span {
+    display: block;
+    padding: 5px;
+    font-size: 16px;
+    border-bottom: 1px solid black;
+    color: black;
+  }
+}
+
+.changeBtn {
+  padding: 20px 30px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 18px;
+  background-color: $accent-color;
+  transition: $transition;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $btn-hover;
+  }
+}

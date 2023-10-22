@@ -1,0 +1,125 @@
+{
+    "homePage":{
+        "headerMenu":{
+            "link1": "Main",
+            "link2": "About us",
+            "link3": "Goods",
+            "link4": "Our team",
+            "link5": "Contacts",
+            "link6": "Account",
+            "loginIn":"Log in",
+            "logOut":"Log out"        
+
+        },
+        "mainImg":{
+            "title":"The best furniture for your home",
+            "subtitle":"Wide range of styles </br> and trims available"
+        },
+        "mainContent":{
+            "title":"A house for creating an interior",
+            "descr":"— Stands for \"Home of furnishing\", which literally means \"Home for interior design\" <br/><br/>The Hoff hypermarket chain is one of the largest Russian and dynamically developing furniture chains. This is the only Russian chain of furniture and home accessories operating in the hypermarket format.",
+            "signature": "Call right now"    
+        }, 
+         "opinionSection":{
+            "title":"What do people think about us", 
+            "personOne":{
+                "name":"Natalia Ivanova",
+                "city":"Moscow",
+                "review":"A good store with a large selection of goods for home and garden. The quality matches the price"
+           }, 
+           "personTwo":{
+                "name":"Maxim Gerasim",
+                "city":"Ivanovo",
+                "review":"Huge selection! Furniture, kitchens, household goods. All sorts of little things necessary for life can be bought here"
+            }, 
+            "personThree":{
+                "name":"Anna Chernenko",
+                "city":"Saint-Petersburg",
+                "review":"Convenient navigation in the store, top-level service, sellers will always help with the choice and tell you where what product is located"
+            }
+        }
+    },
+    "aboutUsPage":{
+        "headerTitle": "About us", 
+        "quote":"In a good design, functionality is always primary, regardless of the forms. But it should not depress emotions",
+        "aboutWork": {
+            "sectionOne":{
+                "title":"What we do",
+                "descr":"Our main task is to create comfort in your home. We create furniture that will perfectly fit into your interior",
+                "link":"Our team"
+            },
+            "sectionTwo":{
+                "title":"Our advantage",
+                "descr":"We work directly with proven furniture factories and make inexpensive furniture in our own production, so our prices are really low. In our catalog, everyone will be able to find furniture to their taste and buy it at a low price",
+                "link":"To the product"
+            }
+        }
+    }, 
+    "goodsPage":{
+        "headerTitle": "Goods",
+        "goodOne": "Good",
+        "categories":{
+            "oneCategory":"All",
+            "twoCategory":"Table",
+            "threeCategory":"Chair",
+            "fourCategory":"Armchair",
+            "fiveCategory":"Sofa",
+            "sixCategory":"Sofa-bed",
+            "sevenCategory":"Pedestal",
+            "eightCategory":"Bed",
+            "nineCategory":"Wardrobe",
+            "tenCategory":"Stool"
+        },
+        "outOfStock":"Out of stock",
+        "ascending":"Ascending",
+        "descending":"Descending ",
+        "shown" :"Shown:",
+        "outOf":"out of",
+        "products":"products"
+    },
+    "ourTeamPage":{
+        "headerTitle":"Our team", 
+        "oneMember":"Team single"
+ 
+    },
+    "accountPage":{
+        "headerTitle":"Account",
+        "login":{
+            "title":"Log in to your account",
+            "inputEmail": "Enter email",
+            "inputPassword":"Enter the password",
+            "btn": "Enter",
+            "text":"No account?",
+            "textLink":"Create it right now!",
+            "incorrect":"incorrect password",
+            "isLog":"You are already logged into your account",
+            "loginMask":"+1 (999) 999-9999"
+        },
+        "register":{
+            "title":"Registration",
+            "inputName":"Enter your name",
+            "inputEmail":"Enter email",
+            "inputPhone":"Enter your phone number",
+            "inputPassword":"Enter the password",
+            "inputComfirmPass":"Confirm password",
+            "btn":"Register",
+            "text":"Have an account?",
+            "textLink":"Log in to it",
+            "incorrect":"Password mismatch"
+        }
+    },
+    "userSchema":{
+        "minNum":"The password must contain at least 6 characters",
+        "maxNum":"",
+        "containLetter":"The password must contain no more than 20 characters",
+        "containNum":"The password must contain at least one number",
+        "passwordMatch":""
+    },
+    "OrderList":{
+        "delivery":"Delivery:",
+        "free": "Free of charge when ordering from 1 000 $",
+        "total":"Total:",
+        "logIn":"Log in to your account",
+        "placeAnOrder":"Place an order"
+    }
+}
