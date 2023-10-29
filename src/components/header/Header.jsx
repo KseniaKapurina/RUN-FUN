@@ -1,17 +1,28 @@
 import React, { useState, useContext, useRef, useEffect } from 'react'
-import { CustomContext } from '../../Context'
 import { Link, NavLink } from 'react-router-dom'
-import { FaBasketShopping } from 'react-icons/fa6'
-import { useTranslation } from 'react-i18next'
-import ICONS from '../../assets/icons'
-import IMAGES from '../../assets/img'
+import { CustomContext } from '../../Context'
+import SidePanelBasket from '../sidePanelBasket/SidePanelBasket'
+import BasketSvg from './basketSvg.svg'
+import AccountSvg from './accountSvg.svg'
+import LikeSvg from './likeSvg.svg'
+import logoImg from './R&F.png'
+import InstagramSvg from './instagramSvg.svg'
+import VK from './VK.png'
+import SearchSvg from './searchSvg.svg'
+import Hamburger from './hamburger.svg'
+import ArrowSvg from './arrowsvg.svg'
 
 import './../../style/style.scss'
 import st from './Header.module.scss'
 
 const Header = ({ order }) => {
-  const { user, logOutUser } = useContext(CustomContext)
+  const { openBasket, setOpenBasket, cart } = useContext(CustomContext)
+  const totalCount = cart.reduce((total, currentItem) => {
+    total += currentItem.count
+    return total
+  }, 0)
 
+  console.log('total', totalCount, cart)
   return (
     <header>
       <div className={st.header_top}>
@@ -19,19 +30,31 @@ const Header = ({ order }) => {
           <div className={st.header_top_container}>
             <div className={st.header_wrapper}>
               <a href="/" className={st.logo}>
-                Логотип
+                <img src={logoImg} alt="логотип" />
               </a>
               <p>Время работы: 10:00 - 22:00</p>
             </div>
             <div className={st.header_wrapper}>
-              любимое
-              {/* логики пока нет */}
-              <CustomNavLink to="/login">аккаунт</CustomNavLink>
-              <Link to="/order">
-                <FaBasketShopping
+              <div className={st.item}>
+                <CustomNavLink to="/like">
+                  <img src={LikeSvg} alt="любимое" />
+                  <p className={st.count}>3</p>
+                </CustomNavLink>
+              </div>
+              <div className={st.item}>
+                <CustomNavLink to="/login">
+                  <img src={AccountSvg} alt="аккаунт" />
+                </CustomNavLink>
+              </div>
+              <div className={`${st.basket} ${st.item}`}>
+                <img
+                  src={BasketSvg}
                   className={`basket `}
+                  onClick={() => setOpenBasket(!openBasket)}
+                  alt="корзина"
                 />
-              </Link>
+                <p className={`${st.count} ${st.countBasket}`}>{totalCount}</p>
+              </div>
             </div>
           </div>
         </div>
@@ -40,9 +63,52 @@ const Header = ({ order }) => {
       <div className={st.header_bottom}>
         <div className="container">
           <div className={st.header_bottom_container}>
-            {/* выпадающие меню
+            {/* выпадающее меню
              */}
-            <p>каталог товаров</p>
+            <nav>
+              <ul class={st.topmenu}>
+                <li>
+                  <div className={`${st.active} ${st.catalog}`}>
+                    <img src={Hamburger} alt="гамбургер" />
+                    Каталог товаров
+                  </div>
+                  <ul className={st.submenu}>
+                    <li>
+                      <a href="/">
+                        <p> Акссеары </p>
+                        <img src={ArrowSvg} alt="стрелка" />
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/">
+                        <p>Для бега </p>
+                        <img src={ArrowSvg} alt="стрелка" />
+                      </a>
+                      <ul className={`${st.submenu} ${st.submenuTwo}`}>
+                        <li>
+                          <a href="/">Кроссовки</a>
+                        </li>
+                        <li>
+                          <a href="/">Термобелье</a>
+                        </li>
+                        <li>
+                          <a href="/">Шорты</a>
+                        </li>
+                        <li>
+                          <a href="/">Очки</a>
+                        </li>
+                        <li>
+                          <a href="/">Футболки</a>
+                        </li>
+                        <li>
+                          <a href="/">Майки</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
 
             <nav>
               <ul className={st.list}>
@@ -59,8 +125,19 @@ const Header = ({ order }) => {
                 </li>
               </ul>
             </nav>
-            <p>социальные сети</p>
-            <p>поиск</p>
+            <div className={st.social}>
+              <a href="/">
+                <img src={InstagramSvg} alt="Instagram" />
+              </a>
+              <a href="/">
+                <img src={VK} alt="VK" />
+              </a>
+            </div>
+            <div className={st.search}>
+              <img src={SearchSvg} alt="лупа" />
+              <input type="text" placeholder="Поиск по каталогу" />
+            </div>
+            {openBasket && <SidePanelBasket />}
           </div>
         </div>
       </div>

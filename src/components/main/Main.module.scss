@@ -1,10 +1,11 @@
 @import "./../../style/variables";
 
 .photos {
-  padding: 20px 0 30px;
   background: url("./backgroundImg.png") center (center / cover) no-repeat;
+  height: 712px;
 }
 .imageContainer {
+  padding: 27px 0;
   display: flex;
   justify-content: space-between;
   gap: 18px;

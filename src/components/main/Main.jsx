@@ -6,11 +6,13 @@ import LinkImgThree from './linkImg-3.png'
 import arrowImg from './arrow.svg'
 import './../../style/style.scss'
 import st from './Main.module.scss'
+import Header from '../header/Header'
 
 const Main = () => {
   return (
     <>
       <section className={st.photos}>
+        <Header/>
         <div className="container">
           <div className={st.imageContainer}>
             <div className={st.image}>

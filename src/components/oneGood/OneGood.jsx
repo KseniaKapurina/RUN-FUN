@@ -2,9 +2,11 @@ import React, { useEffect, useState, useContext } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import { CustomContext } from '../../Context'
+import { Link } from 'react-router-dom'
 import ICONS from './../../assets/icons'
 import Slider from 'react-slick'
-import { Link } from 'react-router-dom'
+import LikeSvg from './likeSvg.svg'
+
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
@@ -14,20 +16,15 @@ import st from './OneGood.module.scss'
 const OneGood = ({ list }) => {
   const params = useParams()
   const [good, setGood] = useState({})
-  const [colorChoose, setColorChoose] = useState(null)
-  const [collectioImg, setCollectionImg] = useState([])
   const [count, setCount] = useState(1)
+  const { AddCart, formatPrice, openBasket, setOpenBasket } = useContext(
+    CustomContext,
+  )
   const [isDisable, setIsDisable] = useState(false)
-  const {
-    AddCart,
-    formatPrice,
-    imgChoose,
-    setImgChoose,
-    colorName,
-    setColorName,
-  } = useContext(CustomContext)
+  const [currentImageURL, setcurrentImageURL] = useState('')
 
   const {
+    id,
     name,
     description,
     adddescription,
@@ -35,35 +32,24 @@ const OneGood = ({ list }) => {
     newPrice,
     category,
     quantity,
+    image,
     brand,
     status,
     season,
     age,
     material,
+    color,
   } = good
 
   useEffect(() => {
     axios(`http://localhost:3001/goods/${params.id}`)
       .then(({ data }) => {
         setGood(data)
-        setImgChoose(data.image[0])
-        setColorChoose(data.color[0].code)
-        setColorName(data.color[0].name)
-
-        setCollectionImg(data.image)
       })
       .catch((error) => {
         console.error(error)
       })
   }, [params])
-
-  const chooseColor = (color) => {
-    setColorName(color.name)
-    setColorChoose(color.code)
-    setImgChoose(color.image)
-
-    setIsDisable(false)
-  }
 
   useEffect(() => {
     const filteredItems = list.filter(
@@ -83,34 +69,31 @@ const OneGood = ({ list }) => {
 
   return (
     <>
-      {/* Описание одного товара */}
       <section className={st.oneGood}>
         <div className="container">
           <div className={st.oneGood__wrapper}>
             <div className={st.oneGood__img}>
-              <img
-                src={`${process.env.PUBLIC_URL}/img/${imgChoose}`}
+             <div className={st.bigImg}>
+             <img
+                src={`${process.env.PUBLIC_URL}/img/${
+                  currentImageURL || (image && image[0])
+                }`}
                 alt={name}
               />
+             </div>
               <div className={st.wrapperImg}>
-                <div className={st.littleImg}>
-                  <img
-                    src={`${process.env.PUBLIC_URL}/img/${collectioImg[1]}`}
-                    alt={name}
-                  />
-                </div>
-                <div className={st.littleImg}>
-                  <img
-                    src={`${process.env.PUBLIC_URL}/img/${collectioImg[2]}`}
-                    alt={name}
-                  />
-                </div>
-                <div className={st.littleImg}>
-                  <img
-                    src={`${process.env.PUBLIC_URL}/img/${collectioImg[3]}`}
-                    alt={name}
-                  />
-                </div>
+                {image?.map((url) => {
+                  return (
+                    <div className={st.littleImg}>
+                      <img
+                        src={`${process.env.PUBLIC_URL}/img/${url}`}
+                        className="small image"
+                        alt="small preview of product"
+                        onClick={() => setcurrentImageURL(url)}
+                      />
+                    </div>
+                  )
+                })}
               </div>
             </div>
             <div className={st.oneGood__info}>
@@ -140,18 +123,19 @@ const OneGood = ({ list }) => {
               {quantity ? (
                 <button
                   className={st.btnOrder}
-                  onClick={() =>
+                  onClick={() => {
                     AddCart({
-                      id: good.id,
-                      name: good.name,
-                      price: good.newPrice || good.price,
-                      colors: colorName,
-                      image: imgChoose,
+                      id: id,
+                      name: name,
+                      price: newPrice || price,
+                      image: image && image[0],
                       count: count,
-                      category: good.category,
+                      category: category,
                       quantity: quantity,
                     })
-                  }
+                    setCount(count + 1)
+                    setOpenBasket(true)
+                  }}
                   style={{
                     backgroundColor: isDisable ? 'rgba(0,0,0,.2)' : '',
                     cursor: isDisable ? 'auto' : '',
@@ -162,6 +146,7 @@ const OneGood = ({ list }) => {
               ) : (
                 ''
               )}
+              <img src={LikeSvg} alt="нравится" />
             </div>
           </div>
         </div>
@@ -245,11 +230,10 @@ const OneGood = ({ list }) => {
                                   id: item.id,
                                   name: item.name,
                                   price: item.price,
-                                  colors: item.colors[0].name,
                                   image: item.image[0],
                                   count: count,
                                   category: item.category,
-                                  quantity: item.colors[0].quantity,
+                                  quantity: item.quantity,
                                 })
                               }}
                             >
