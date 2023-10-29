@@ -5,7 +5,6 @@ import Header from "./../header/Header";
 import Footer from "./../footer/Footer";
 import {
   MainPage,
-
   GoodsPage,
   OneGoodPage,
   TeamPage,
@@ -24,11 +23,11 @@ function App() {
     <>
       <div className="global_container">
         <div className="content">
-          <Header />
+          {location.pathname === "/" ? "" : <Header />}
 
           <Routes>
             <Route path="/" element={<MainPage />} />
-      
+
             <Route
               path="/goods"
               element={<GoodsPage list={list} setList={setList} />}

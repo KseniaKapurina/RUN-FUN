@@ -16,18 +16,17 @@ export const Context = (props) => {
     const savedCart = localStorage.getItem("cart");
     return savedCart ? JSON.parse(savedCart) : [];
   });
+  const [openBasket, setOpenBasket] = useState(false);
   const [ticket, setTicket] = useState([]); //купон
   const navigate = useNavigate();
 
   const AddCart = (good) => {
-    let idx = cart.findIndex(
-      (item) => item.id === good.id && item.colors === good.colors
-    );
+    let idx = cart.findIndex((item) => item.id === good.id);
     const maxQuantity = good.quantity;
     if (idx >= 0) {
       setCart(
         cart.map((item) => {
-          if (item.id === good.id && item.colors === good.colors) {
+          if (item.id === good.id) {
             const newTotalCount = item.count + good.count;
             if (newTotalCount <= maxQuantity) {
               return { ...item, count: newTotalCount };
@@ -109,6 +108,7 @@ export const Context = (props) => {
       ? priceStr.slice(0, -3) + " " + priceStr.slice(-3)
       : priceStr;
   };
+  
 
   const value = {
     cart,
@@ -130,6 +130,8 @@ export const Context = (props) => {
 
     ticket,
     setTicket,
+    openBasket,
+    setOpenBasket,
 
     // isDisable,
     // setIsDisable,
