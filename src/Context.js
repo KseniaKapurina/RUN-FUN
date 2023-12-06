@@ -5,6 +5,9 @@ import axios from "axios";
 export const CustomContext = createContext();
 
 export const Context = (props) => {
+  const [list, setList] = useState([]);
+
+  //Получение всех товаров
   const [user, setUser] = useState({
     login: "",
   });
@@ -19,6 +22,16 @@ export const Context = (props) => {
   const [openBasket, setOpenBasket] = useState(false);
   const [ticket, setTicket] = useState([]); //купон
   const navigate = useNavigate();
+  const [addSuccess, setAddSuccess] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState("all");
+  const [selectedCategoryName, setSelectedCategoryName] = useState("всё");
+
+  // const getAllItems = async () => {
+  //   const res = await axios("http://localhost:3001/goods");
+  //   // const transformedItems = res.data.map((item) => _transformItems(item));
+  //   // setList(transformedItems);
+  //   setList(res);
+  // };
 
   const AddCart = (good) => {
     let idx = cart.findIndex((item) => item.id === good.id);
@@ -108,9 +121,51 @@ export const Context = (props) => {
       ? priceStr.slice(0, -3) + " " + priceStr.slice(-3)
       : priceStr;
   };
-  
+
+  // const _transformItems = (item) => {
+  //   const {
+  //     id,
+  //     image,
+  //     name,
+  //     description,
+  //     adddescription,
+  //     price,
+  //     newPrice,
+  //     category,
+  //     quantity,
+  //     brand,
+  //     status,
+  //     season,
+  //     gender,
+  //     age,
+  //     color,
+  //     material,
+  //   } = item;
+
+  //   return {
+  //     id: id,
+  //     image: image,
+  //     name: name,
+  //     description: description,
+  //     adddescription: adddescription,
+  //     price: price,
+  //     newPrice: newPrice,
+  //     category: category,
+  //     quantity: quantity,
+  //     brand: brand,
+  //     status: status,
+  //     season: season,
+  //     gender: gender,
+  //     age: age,
+  //     material: material,
+  //     color: color,
+  //   };
+  // };
 
   const value = {
+    // getAllItems,
+    list,
+    setList,
     cart,
     setCart,
     AddCart,
@@ -132,9 +187,16 @@ export const Context = (props) => {
     setTicket,
     openBasket,
     setOpenBasket,
+    addSuccess,
+    setAddSuccess,
 
     // isDisable,
     // setIsDisable,
+
+    selectedCategory,
+    setSelectedCategory,
+    selectedCategoryName,
+    setSelectedCategoryName,
   };
 
   return (

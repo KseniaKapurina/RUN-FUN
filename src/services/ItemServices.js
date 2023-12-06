@@ -26,6 +26,7 @@ const ItemServices = () => {
       age,
       color,
       material,
+      weatherCondition
     } = item;
 
     return {
@@ -44,6 +45,7 @@ const ItemServices = () => {
       gender: gender,
       age: age,
       material: material,
+      weatherCondition:weatherCondition,
       color: color,
     };
   };

@@ -1,22 +1,31 @@
-import React, { useState } from "react";
-import { useTranslation } from "react-i18next";
+import React, { useState, useContext } from "react";
+import { CustomContext } from "./../Context";
 import { Pagination } from "antd";
 import Categories from "../components/categories/Categories";
 import List from "../components/list/List";
-
+import BreadCramps from "../components/breadCramps/BreadCramps";
 import "./../style/style.scss";
 
-const GoodsPage = ({ list, setList }) => {
-  const { t } = useTranslation();
-  const [selectedCategory, setSelectedCategory] = useState("all");
+const GoodsPage = () => {
   const [sort, setSort] = useState(null);
   const isActive = (value) => (sort === value ? "active" : "");
   const [page, setPage] = useState(1);
 
-  const numShow = 9; //кол-во отображаемых товаров
+  const {
+    list,
+    setList,
+    selectedCategory,
+    setSelectedCategory,
+    setSelectedCategoryName,
+  } = useContext(CustomContext);
+
+  const numShow = 8; //кол-во отображаемых товаров
 
   const chooseCategory = (category) => {
     setSelectedCategory(category);
+  };
+  const chooseCategoryName = (categoryName) => {
+    setSelectedCategoryName(categoryName);
   };
 
   const filterListByCountPage = list.filter((item) => {
@@ -41,27 +50,43 @@ const GoodsPage = ({ list, setList }) => {
     }
     return filteredListByCategory;
   });
-
+  console.log(selectedCategory);
   return (
     <>
       <section className="catalog">
         <div className="container">
-          <Categories
-            chooseCategory={chooseCategory}
-            selectedCategory={selectedCategory}
-            setPage={setPage}
-          />
-          <List list={sortList} setList={setList} />
-          {filterListByCountPage.length > numShow && (
-            <Pagination
-              simple
-              onChange={setPage}
-              current={page}
-              total={filterListByCountPage.length}
-              pageSize={numShow}
-              style={{ margin: "0 auto 100px", textAlign: "center" }}
+          <BreadCramps linkOne="/goods" textLink="Товары" />
+          {selectedCategory === "all" && (
+            <Categories
+              chooseCategory={chooseCategory}
+              chooseCategoryName={chooseCategoryName}
+              selectedCategory={selectedCategory}
+              setPage={setPage}
+              position="horizontal"
             />
           )}
+          {selectedCategory !== "all" && (
+            <Categories
+              chooseCategory={chooseCategory}
+              selectedCategory={selectedCategory}
+              setPage={setPage}
+              position="vertical"
+            />
+          )}
+
+          <div className="listWrapper">
+            <List list={sortList} setList={setList} />
+            {filterListByCountPage.length > numShow && (
+              <Pagination
+                simple
+                onChange={setPage}
+                current={page}
+                total={filterListByCountPage.length}
+                pageSize={numShow}
+                style={{ margin: "86px auto 0px", textAlign: "center" }}
+              />
+            )}
+          </div>
         </div>
       </section>
     </>

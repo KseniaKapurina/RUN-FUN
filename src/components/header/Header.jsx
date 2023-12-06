@@ -1,5 +1,5 @@
 import React, { useState, useContext, useRef, useEffect } from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useLocation } from 'react-router-dom'
 import { CustomContext } from '../../Context'
 import SidePanelBasket from '../sidePanelBasket/SidePanelBasket'
 import BasketSvg from './basketSvg.svg'
@@ -16,13 +16,15 @@ import './../../style/style.scss'
 import st from './Header.module.scss'
 
 const Header = ({ order }) => {
-  const { openBasket, setOpenBasket, cart } = useContext(CustomContext)
+  const { openBasket, setOpenBasket, cart, user, logOutUser } = useContext(
+    CustomContext,
+  )
   const totalCount = cart.reduce((total, currentItem) => {
     total += currentItem.count
     return total
   }, 0)
+  const location = useLocation()
 
-  console.log('total', totalCount, cart)
   return (
     <header>
       <div className={st.header_top}>
@@ -41,20 +43,20 @@ const Header = ({ order }) => {
                   <p className={st.count}>3</p>
                 </CustomNavLink>
               </div>
-              <div className={st.item}>
-                <CustomNavLink to="/login">
+              <div
+                className={st.item}
+                // onClick={()=>{
+                //   location.pathname="/account" ? logOutUser() : null
+                // }}
+              >
+                <CustomNavLink to={user && user.name ? '/account' : '/login'}>
                   <img src={AccountSvg} alt="аккаунт" />
                 </CustomNavLink>
               </div>
-              <div className={`${st.basket} ${st.item}`}>
-                <img
-                  src={BasketSvg}
-                  className={`basket `}
-                  onClick={() => setOpenBasket(!openBasket)}
-                  alt="корзина"
-                />
+              <Link to="/order" className={`${st.basket} ${st.item}`}>
+                <img src={BasketSvg} className={`basket `} alt="корзина" />
                 <p className={`${st.count} ${st.countBasket}`}>{totalCount}</p>
-              </div>
+              </Link>
             </div>
           </div>
         </div>
@@ -113,15 +115,15 @@ const Header = ({ order }) => {
             <nav>
               <ul className={st.list}>
                 <li>
-                  <a href="/" to="/about">
+                  <a href="#aboutUs" to="/about">
                     О нас
                   </a>
                 </li>
                 <li>
-                  <a href="/">Акции</a>
+                  <a href="#sales">Акции</a>
                 </li>
                 <li>
-                  <a href="/">Новинки</a>
+                  <a href="#new">Новинки</a>
                 </li>
               </ul>
             </nav>
@@ -135,7 +137,12 @@ const Header = ({ order }) => {
             </div>
             <div className={st.search}>
               <img src={SearchSvg} alt="лупа" />
-              <input type="text" placeholder="Поиск по каталогу" />
+              <input
+                type="text"
+                value=""
+                placeholder="Поиск по каталогу"
+                onClick={() => setOpenBasket(true)}
+              />
             </div>
             {openBasket && <SidePanelBasket />}
           </div>

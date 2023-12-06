@@ -1,0 +1,28 @@
+nav {
+  display: flex;
+  gap: 5px;
+  // margin-bottom: 35px;
+  padding-top: 5px;
+  font-family: Raleway;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+}
+.breadcrumbActive {
+  color: var(--Black, #000);
+  font-family: Raleway;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+  cursor: default;
+}
+.breadcrumbNotActive {
+  color: var(--Smoky, #8a8a8a);
+  font-family: Raleway;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+}

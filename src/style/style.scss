@@ -1,6 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,400;0,500;0,600;0,700;1,100;1,300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Prosto+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@1&family=Raleway:wght@200;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Prosto+One&display=swap");
 @import "animate.css";
 @import "./_variables.scss";
 
@@ -25,20 +29,12 @@ body {
   padding-top: 20px;
   transition: $transition;
 }
-.global_container {
-  position: relative;
-  min-height: 100vh;
-  overflow-x: hidden;
-}
 .container {
   width: 1380px;
   padding: 0 40px;
   min-height: auto;
   margin: 0 auto;
   position: relative;
-}
-.content {
-  min-height: calc(100vh - 200px);
 }
 
 a {
@@ -62,4 +58,103 @@ button:focus {
 .catalog {
   background-color: $neutral-color;
   padding-bottom: 64px;
+}
+.react-multi-carousel-list {
+  position: static !important;
+  margin-left: 88px !important;
+}
+.react-multiple-carousel__arrow {
+  width: 40px !important;
+  height: 40px !important;
+  background: #fff !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  top: -15px;
+  &:before {
+    width: 24px !important;
+    height: 24px !important;
+    color: #222 !important;
+  }
+}
+.react-multiple-carousel__arrow--left {
+  left: 365px !important;
+  &:before {
+    padding-right: 5px !important;
+  }
+}
+.react-multiple-carousel__arrow--right {
+  right: inherit !important;
+  left: 420px;
+  &:before {
+    padding-left: 5px !important;
+  }
+}
+
+.notification {
+  text-align: center;
+  background-color: #fff;
+  padding: 40px 20px;
+  height: 100px;
+  width: 300px;
+  position: fixed;
+  right: 200px;
+  top: 400px;
+  z-index: 100;
+}
+.react-multi-carousel-dot-list {
+  bottom: -50px !important;
+}
+.react-multi-carousel-dot {
+  button {
+    width: 7px !important;
+    height: 7px !important;
+    border: none !important;
+  }
+  &--active {
+    button {
+      background-color: $accent-color !important;
+    }
+  }
+}
+.Main_bottom__I20HL {
+  .react-multiple-carousel__arrow {
+    top: 50% !important;
+    transform: translateY(-50%);
+  }
+  .react-multiple-carousel__arrow--left {
+    left: -50px !important;
+  }
+  .react-multiple-carousel__arrow--right {
+    left: inherit !important;
+    right: -50px !important;
+  }
+}
+.accountPage {
+  background: rgba(255, 160, 122, 0.55);
+  padding: 25px 0 170px;
+  min-height: 1188px;
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    // flex-wrap: wrap;
+  }
+
+  .additional {
+    // display: flex;
+    // flex-direction: column;
+    width: 310px;
+    button {
+      background-color: rgba(104, 131, 213, 0.55);
+      padding: 10px 20px;
+      width: 100%;
+    }
+    button + button {
+      margin-bottom: 4px;
+    }
+  }
+}
+.listWrapper {
+  background: #dcdcdc;
+  padding: 77px 127px 90px;
 }

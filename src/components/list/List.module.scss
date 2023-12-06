@@ -2,9 +2,8 @@
 
 .goods {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
-  gap:  83px;
-  background: #dcdcdc;
-  padding: 77px 115px 90px;
+  gap: 83px;
+  
 }

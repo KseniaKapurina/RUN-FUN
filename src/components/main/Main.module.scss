@@ -2,7 +2,7 @@
 
 .photos {
   background: url("./backgroundImg.png") center (center / cover) no-repeat;
-  height: 712px;
+  min-height: 712px;
 }
 .imageContainer {
   padding: 27px 0;
@@ -26,4 +26,116 @@
   left: 0 !important;
   bottom: -10px !important;
   border-radius: 0px 5px !important;
+}
+.sliders {
+  background: url("./backgroundImg2.jpg") center (center / cover) no-repeat;
+  min-height: 1295px;
+  padding: 55px 0 198px;
+}
+.subtitle {
+  font-family: Prosto One;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 32px;
+  margin-bottom: 5px;
+  margin-left: 87px;
+}
+.block {
+  background-color: red;
+  height: 100px;
+}
+.wraperSlider {
+  margin-bottom: 45px;
+}
+.brands {
+  min-height: 246px;
+  width: 100%;
+  background-color: $main-color;
+  padding: 54px 0;
+  .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    img {
+      height: 77px;
+      border-radius: 5px;
+      object-fit: contain;
+    }
+  }
+}
+.aboutUs {
+  background: rgba(255, 160, 122, 0.55);
+  min-height: 845px;
+  padding: 152px 0;
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    img {
+      width: 640px;
+      height: 480px;
+      object-fit: contain;
+    }
+    .title {
+      color: #6883d5;
+      font-family: Prosto One;
+      font-size: 30px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 32px;
+    }
+    .content {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding-top: 30px;
+    }
+    .descr {
+      width: 529px;
+      color: var(--Black, #000);
+      font-family: Raleway;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 24px;
+    }
+    a {
+      background-color: $accent-color;
+      padding: 14px 32px;
+      color: #000;
+      text-align: center;
+      font-family: Raleway;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 16px;
+      width: 210px;
+      border-radius: 5px;
+      transition: $transition;
+      cursor: pointer;
+      &:hover {
+        background-color: $main-color;
+      }
+    }
+  }
+}
+.sale {
+  .top {
+    background-color: #6883d5;
+    min-height: 68px;
+    padding: 22px 0;
+    .title {
+      color: #000;
+      font-family: Prosto One;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 24px; /* 100% */
+    }
+  }
+  .bottom {
+    padding: 30px 0;
+    background-color: rgba(104, 131, 213, 0.45);
+    min-height: 587px;
+  }
 }

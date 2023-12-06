@@ -13,11 +13,11 @@ import 'slick-carousel/slick/slick-theme.css'
 import './../../style/style.scss'
 import st from './OneGood.module.scss'
 
-const OneGood = ({ list }) => {
+const OneGood = () => {
   const params = useParams()
   const [good, setGood] = useState({})
   const [count, setCount] = useState(1)
-  const { AddCart, formatPrice, openBasket, setOpenBasket } = useContext(
+  const { AddCart, formatPrice, setOpenBasket, list } = useContext(
     CustomContext,
   )
   const [isDisable, setIsDisable] = useState(false)
@@ -36,8 +36,10 @@ const OneGood = ({ list }) => {
     brand,
     status,
     season,
+    gender,
     age,
     material,
+    weatherCondition,
     color,
   } = good
 
@@ -73,14 +75,14 @@ const OneGood = ({ list }) => {
         <div className="container">
           <div className={st.oneGood__wrapper}>
             <div className={st.oneGood__img}>
-             <div className={st.bigImg}>
-             <img
-                src={`${process.env.PUBLIC_URL}/img/${
-                  currentImageURL || (image && image[0])
-                }`}
-                alt={name}
-              />
-             </div>
+              <div className={st.bigImg}>
+                <img
+                  src={`${process.env.PUBLIC_URL}/img/${
+                    currentImageURL || (image && image[0])
+                  }`}
+                  alt={name}
+                />
+              </div>
               <div className={st.wrapperImg}>
                 {image?.map((url) => {
                   return (
@@ -134,7 +136,7 @@ const OneGood = ({ list }) => {
                       quantity: quantity,
                     })
                     setCount(count + 1)
-                    setOpenBasket(true)
+                    // setOpenBasket(true)
                   }}
                   style={{
                     backgroundColor: isDisable ? 'rgba(0,0,0,.2)' : '',
@@ -162,17 +164,24 @@ const OneGood = ({ list }) => {
                   Бренд: <p>{brand}</p>
                 </li>
                 <li>
-                  Сезон: <p>{status}</p>
+                  Сезон: <p>{season}</p>
                 </li>
                 <li>
-                  Пол: <p>{season}</p>
+                  Пол: <p>{gender}</p>
                 </li>
                 <li>
                   Возраст: <p>{age}</p>
                 </li>
-                <li>
-                  Материал: <p>{material}</p>
-                </li>
+                {material && (
+                  <li>
+                    Материал: <p>{material}</p>
+                  </li>
+                )}
+                {weatherCondition && (
+                  <li>
+                    Материал: <p>{weatherCondition}</p>
+                  </li>
+                )}
               </ul>
             </div>
           </div>
